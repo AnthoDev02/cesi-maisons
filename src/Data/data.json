@@ -1,0 +1,20 @@
+[
+    {
+      "nom": "promo1",
+      "score": 85,
+      "pseudo": "coucou",
+      "image": "Poisson.jfif"
+    },
+    {
+      "nom": "promo2",
+      "score": 12,
+      "pseudo": "kenny",
+      "image": "Chat.jpg"
+    },
+    {
+      "nom": "promo3",
+      "score": 50,
+      "pseudo": "tets",
+      "image": "AOE2.jfif"
+    }
+  ]
