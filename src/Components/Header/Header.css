@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+}
+
+.title {
+    background-color: #fbe216;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    font-weight: 800;
+    color: black;
+    border-radius: 0 5px 5px 0;
+}
+
+.header-right {
+    height: 100%;
+    width: 100%;
+}
+
+.connexion {
+    display: flex;
+    justify-content: flex-end;
+}
