@@ -1,21 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from "../Header/Header"
-import data from "../../Data/data.json";
+import { GetAllPromos } from "../../Repositories/GetPromos";
 import "./Ranking.css";
 
 const Ranking = () => {
-    const promos = data.sort((a, b) => b.score-a.score);
+    const [allPromos, setAllPromos] = useState("");
+
+    useEffect(() => {
+        GetAllPromos().then((response) => setAllPromos(response.data));
+    }, []);
+
+    const promos = allPromos && allPromos.sort((a, b) => b.score-a.score);
     return (
         <>
             <Header />
             <ul className="list-group promos">
-                {promos.map((promo, index) =>
-                    <li class="row" key={index}>
-                        <div class="col">
-                            <img src={"Images/" + promo.image}/>
+                {promos&& promos.map((promo, index) =>
+                    <li className="row" key={index}>
+                        <div className="col">
+                            <img src={"Images/" + promo.logo}/>
                         </div>
-                        <div class="col pseudo">{promo.pseudo}</div>
-                        <div class="col score">{promo.score}</div>
+                        <div className="col pseudo">{promo.nom}</div>
+                        <div className="col score">{promo.score}</div>
                     </li>
                 )}
             </ul>

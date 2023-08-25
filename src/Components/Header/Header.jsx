@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <header class="header mb-5">
+        <header className="header mb-5">
             <img src="Images/cesi.png" alt="logo" />
-            <div class="header-right">
-                <div class="connexion">
+            <div className="header-right">
+                <div className="connexion">
                     <Link to="/Authentication" > Connexion </Link>
                 </div>
-                <div class="title">
+                <div className="title">
                     CLASSEMENT
                 </div>
             </div>
