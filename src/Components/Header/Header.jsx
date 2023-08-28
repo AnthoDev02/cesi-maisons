@@ -1,17 +1,28 @@
-import './Header.css';
 import React from 'react';
+import { useLocation } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import './Header.css';
 
-const Header = () => {
+const Header = ({ title }) => {
+    
+    const { state } = useLocation();
+    console.log(state);
+
     return (
         <header className="header mb-5">
             <img src="Images/cesi.png" alt="logo" />
             <div className="header-right">
-                <div className="connexion">
-                    <Link to="/Authentication" > Connexion </Link>
-                </div>
+                {title === "CLASSEMENT" && 
+                    <div className="connexion">
+                        {state === null ? 
+                            <Link to="/Authentication" > Connexion </Link>
+                            :
+                            <p>Hello {state}</p>
+                        }
+                    </div>
+                }
                 <div className="title">
-                    CLASSEMENT
+                    {title}
                 </div>
             </div>
         </header>

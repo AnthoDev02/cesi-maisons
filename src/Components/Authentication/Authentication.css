@@ -1,0 +1,22 @@
+.authentification {
+    margin: 0 auto;
+}
+
+form {
+    width: 50%;
+    margin: 15% auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.invalidEmail {
+    color : red;
+}
+
+.btn {
+    background-color: #fbe216;
+}
+.btn:hover {
+    background-color: #fbe216;
+}

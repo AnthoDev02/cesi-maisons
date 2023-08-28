@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Header from "../Header/Header"
-import { GetAllPromos } from "../../Repositories/GetPromos";
+import { GetAllPromos } from "../../Repositories/Promo";
 import "./Ranking.css";
 
 const Ranking = () => {
@@ -13,7 +13,7 @@ const Ranking = () => {
     const promos = allPromos && allPromos.sort((a, b) => b.score-a.score);
     return (
         <>
-            <Header />
+            <Header title="CLASSEMENT" />
             <ul className="list-group promos">
                 {promos&& promos.map((promo, index) =>
                     <li className="row" key={index}>
