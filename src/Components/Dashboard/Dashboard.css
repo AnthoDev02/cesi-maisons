@@ -1,0 +1,19 @@
+.point {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.modif-score {
+    font-weight: bold;
+    padding: 1rem 2rem;
+    background-color: white;
+}
+
+.point button {
+    padding: 1rem 2rem;
+}
+
+.point input {
+    width: 8rem;
+    text-align: center;
+}

@@ -11,12 +11,13 @@ const Ranking = () => {
     }, []);
 
     const promos = allPromos && allPromos.sort((a, b) => b.score-a.score);
+
     return (
         <>
             <Header title="CLASSEMENT" />
             <ul className="list-group promos">
                 {promos&& promos.map((promo, index) =>
-                    <li className="row" key={index}>
+                    <li style={{backgroundColor: promo.couleur}} className="row" key={index}>
                         <div className="col">
                             <img src={"Images/" + promo.logo}/>
                         </div>

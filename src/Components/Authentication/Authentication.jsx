@@ -30,7 +30,7 @@ const Authentication = () => {
         signIn(form).then((response) => {
             if(response.data){
                 console.log("coucou");
-                navigate("/", { state: form.Email });
+                navigate("/dashboard");
             }
         });
     }
