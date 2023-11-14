@@ -1,0 +1,19 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "xprotocol",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 8080,
+            "driver": "MySQL",
+            "name": "MySQL Local",
+            "database": "CESI_DB",
+            "username": "root",
+            "connectionTimeout": 15,
+            "password": "Cesiantho"
+        }
+    ]
+}

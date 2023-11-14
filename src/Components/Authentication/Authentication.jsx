@@ -19,6 +19,7 @@ const Authentication = () => {
     
     const [form, setForm] = useState(initForm);
     const [validateForm , setValidateForm] = useState(initValidateForm)
+    const [isAuthenticationError , setIsAuthenticationError] = useState(false)
     
     const handleOnChangeEmail = (event) => {
         setForm({...form, Email: event.target.value})
@@ -26,11 +27,14 @@ const Authentication = () => {
         setValidateForm({...validateForm , isValidEmail: regexMail.test(event.target.value)});
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
         signIn(form).then((response) => {
             if(response.data){
-                console.log("coucou");
                 navigate("/dashboard");
+            }
+            else {
+                setIsAuthenticationError(true)
             }
         });
     }
@@ -47,6 +51,9 @@ const Authentication = () => {
                 <input type="password" className="form-control" placeholder="Password" onChange={(event) => setForm({...form, Password: event.target.value})}/>
             </div>
             <button type="button" onClick={handleSubmit} className="btn">CONNEXION</button>
+            {isAuthenticationError && 
+                <p>Le mail ou le MDP est incorrect</p>
+            }
             </form>
         </>
     )
